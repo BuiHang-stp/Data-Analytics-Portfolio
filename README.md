@@ -60,7 +60,7 @@ personal-websites-portfolio/
 - Lịch sử công việc và kinh nghiệm chuyên môn
 - Mô tả các vị trí đã giữ và thành tích đạt được
 
-### 5. **Projects** (`Projects.jsx`)
+### 5. **Education** (`Projects.jsx`)
 - Các dự án đã thực hiện hoặc đang thực hiện
 - Liên kết tới GitHub, demo, hoặc mô tả chi tiết dự án
 
@@ -68,16 +68,11 @@ personal-websites-portfolio/
 - Danh sách các chứng chỉ, giấy phép, giải thưởng
 - Hiển thị từ file `certifications.json`
 
-### 7. **Community** (`Community.jsx`)
-- Giới thiệu về cộng đồng được quản lý/tham gia
-- Hiển thị thống kê tác động xã hội
-- Bao gồm carousel ảnh về hoạt động cộng đồng
-
-### 8. **Contact** (`Contact.jsx`)
+### 7. **Contact** (`Contact.jsx`)
 - Biểu mẫu liên hệ để người dùng gửi tin nhắn
 - Thông tin liên lạc: email, điện thoại, mạng xã hội
 
-### 9. **ScrollToTop** (`ScrollToTop.jsx`)
+### 8. **ScrollToTop** (`ScrollToTop.jsx`)
 - Nút floating để cuộn lên đầu trang
 - Cải thiện trải nghiệm người dùng
 
@@ -144,14 +139,6 @@ npm run build
 - Sử dụng Intersection Observer cho animation khi scroll
 - Hỗ trợ dark mode thông qua CSS variables
 - Hiệu suất cao với lazy loading
-
----
-
-## 👤 Tác Giả
-
-Trang web portfolio cá nhân - được tạo bởi **tunguyenn99**
-
----
 
 ## 📄 License
 
