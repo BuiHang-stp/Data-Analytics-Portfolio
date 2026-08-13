@@ -1,6 +1,6 @@
 # Bùi Thu Hằng — Data Analyst Portfolio
 
-Website portfolio cá nhân giới thiệu bản thân, học vấn, chứng chỉ đạt được và các dự án đã thực hiện và thông tin liên hệ. Web portfolio cá nhân được xây dựng bằng React + Vite và dễ dàng deploy trên vercel.app
+Website portfolio cá nhân giới thiệu bản thân, học vấn, chứng chỉ đạt được và các dự án đã thực hiện và thông tin liên hệ. Web được xây dựng bằng React + Vite và dễ dàng deploy trên vercel.app
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
@@ -9,9 +9,10 @@ Website portfolio cá nhân giới thiệu bản thân, học vấn, chứng ch�
 
 ## Giới thiệu
 
-Xin chào, đây là trang portfolio cá nhân, nơi mình chia sẻ các dự án thực hiện trong quá trình học Business Data Analytics. Mình định hướng trở thành Data Analyst, đặc biệt quan tâm đến lĩnh vực ngân hàng và fintech.
+Xin chào, đây là trang portfolio cá nhân, nơi mình chia sẻ các dự án thực hiện trong quá trình học Business Data Analytics. Mình định hướng trở thành Data Analyst, đặc biệt quan tâm đến lĩnh vực tài chính và dịch vụ tài chính.
 
-Các dự án trong portfolio tập trung vào những kỹ năng mình muốn áp dụng trong công việc thực tế, như xác định bài toán từ nhu cầu kinh doanh, SQL, phân tích dữ liệu, xây dựng data pipeline, Power BI và báo cáo. Bên cạnh đó là thông tin về học vấn, chứng chỉ và các hoạt động mình đã tham gia.
+Các dự án trong portfolio tập trung vào những kỹ năng mình muốn áp dụng trong công việc thực tế, như xác định bài toán từ nhu cầu kinh doanh, SQL, phân tích dữ liệu, xây dựng data pipeline, Power BI và báo cáo. 
+
 
 ## Mục lục
 
@@ -29,11 +30,11 @@ Các dự án trong portfolio tập trung vào những kỹ năng mình muốn �
 
 ## Tính năng
 
-- **About Me** — giới thiệu bản thân và định hướng nghề nghiệp
-- **Education** — học vấn, nghiên cứu khoa học và hoạt động ngoại khóa, trình bày dạng tab
+- **About Me** — giới thiệu 
+- **Education** — học vấn
 - **Projects** — các dự án Data Analytics, mỗi dự án có link GitHub và link dashboard trực tiếp (nếu có)
 - **Architecture & Stack** — sơ đồ kiến trúc pipeline dữ liệu và công nghệ sử dụng
-- **Certifications** — chứng chỉ và giải thưởng, kèm logo tổ chức cấp
+- **Certifications** — chứng chỉ đạt được
 - **Contact** — thông tin liên hệ
 - Hỗ trợ dark mode và responsive trên điện thoại
 
@@ -130,7 +131,7 @@ Phần lớn nội dung nằm trong thư mục `src/data/`, chỉnh trực tiế
 
 ## Cảm ơn bạn đã đọc đến đây
 
-Nếu bạn có góp ý, câu hỏi hay muốn trao đổi, mình rất vui được kết nối
+Các bạn có góp ý, câu hỏi hay muốn trao đổi thêm, mình rất vui được kết nối
 
 - **Email:** [buihang.work@gmail.com](mailto:buihang.work@gmail.com)
 - **LinkedIn:** [linkedin.com/in/buithuhang](https://www.linkedin.com/in/buithuhang/)
