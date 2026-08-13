@@ -1,145 +1,142 @@
-# 🚀 Trang Web Portfolio Cá Nhân
+# Bùi Thu Hằng — Data Analyst Portfolio
 
-Một trang web portfolio cá nhân được xây dựng bằng **React + Vite** với thiết kế hiện đại, responsive, và hiệu suất cao.
+Website portfolio cá nhân giới thiệu bản thân, học vấn, chứng chỉ đạt được và các dự án đã thực hiện và thông tin liên hệ. Web portfolio cá nhân được xây dựng bằng React + Vite và dễ dàng deploy trên vercel.app
 
-## 📋 Mô Tả Dự Án
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-2860c4?logo=vercel&logoColor=white)
 
-Dự án này là một trang web portfolio toàn diện để giới thiệu về bản thân, kỹ năng, kinh nghiệm làm việc, các dự án đã thực hiện, chứng chỉ đạt được, cộng đồng quản lý, và thông tin liên hệ.
+## Giới thiệu
 
----
+Đây là trang portfolio cá nhân của mình — một sinh viên tốt nghiệp ngành Business Data Analytics, định hướng trở thành Data Analyst trong lĩnh vực ngân hàng và fintech.
 
-## 🏗️ Cấu Trúc Dự Án
+Trang tập hợp các dự án phân tích dữ liệu mình đã thực hiện (từ xây dựng pipeline dữ liệu, thiết kế dashboard, đến mô hình cảnh báo sớm), cùng với học vấn, chứng chỉ và hoạt động — giúp nhà tuyển dụng nắm được năng lực của mình một cách nhanh chóng.
+
+Website được xây dựng bằng React + Vite, thiết kế dạng single-page cuộn, tối giản và tập trung vào nội dung.
+
+## Mục lục
+
+- [Bùi Thu Hằng — Data Analyst Portfolio](#bùi-thu-hằng--data-analyst-portfolio)
+  - [Giới thiệu](#giới-thiệu)
+  - [Mục lục](#mục-lục)
+  - [Tính năng](#tính-năng)
+  - [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+  - [Cấu trúc thư mục](#cấu-trúc-thư-mục)
+  - [Cài đặt và chạy local](#cài-đặt-và-chạy-local)
+  - [Build và deploy](#build-và-deploy)
+  - [Cách cập nhật nội dung](#cách-cập-nhật-nội-dung)
+  - [Ghi nhận \& Nguồn tham khảo](#ghi-nhận--nguồn-tham-khảo)
+  - [Liên hệ](#liên-hệ)
+
+## Tính năng
+
+- **About Me** — giới thiệu bản thân và định hướng nghề nghiệp
+- **Education** — học vấn, nghiên cứu khoa học và hoạt động ngoại khóa, trình bày dạng tab
+- **Projects** — các dự án Data Analytics, mỗi dự án có link GitHub và link dashboard trực tiếp (nếu có)
+- **Architecture & Stack** — sơ đồ kiến trúc pipeline dữ liệu và công nghệ sử dụng
+- **Certifications** — chứng chỉ và giải thưởng, kèm logo tổ chức cấp
+- **Contact** — thông tin liên hệ
+- Hỗ trợ dark mode và responsive trên điện thoại
+
+## Công nghệ sử dụng
+
+- **React 18** + **Vite** — framework giao diện và build tool
+- **Tailwind CSS** — styling
+- **Lucide / React Icons** — bộ icon
+- Nội dung tách riêng dạng **JSON** để dễ cập nhật mà không cần sửa code
+- Deploy trên **Vercel**
+
+## Cấu trúc thư mục
 
 ```
 personal-websites-portfolio/
+│
+├── public/
+│   ├── favicon.svg              # Favicon của trang
+│   └── icons.svg
+│
 ├── src/
-│   ├── components/          # Các component React chính
-│   │   ├── AboutMe.jsx      # Giới thiệu về bạn
-│   │   ├── Certifications.jsx # Danh sách chứng chỉ & giải thưởng
-│   │   ├── Community.jsx    # Phần giới thiệu cộng đồng & tác động xã hội
-│   │   ├── Contact.jsx      # Biểu mẫu liên hệ
-│   │   ├── Experience.jsx   # Kinh nghiệm làm việc & hành trình sự nghiệp
-│   │   ├── Navbar.jsx       # Thanh điều hướng chính
-│   │   ├── Projects.jsx     # Hiển thị các dự án đã thực hiện
-│   │   ├── ScrollToTop.jsx  # Nút cuộn lên đầu trang
-│   │   └── Techstack.jsx    # Công nghệ & kỹ năng được sử dụng
-│   ├── data/                # Dữ liệu tĩnh
-│   │   ├── certifications.json # Dữ liệu chứng chỉ
-│   │   └── projects.json    # Dữ liệu các dự án
-│   ├── assets/              # Hình ảnh & đối tượng tĩnh
-│   │   ├── avatar/          # Ảnh đại diện
-│   │   └── community/       # Hình ảnh liên quan cộng đồng
-│   ├── App.jsx              # Component chính ứng dụng
-│   ├── App.css              # Kiểu dáng ứng dụng
-│   ├── main.jsx             # Điểm vào ứng dụng
-│   └── index.css            # Kiểu dáng toàn cầu
-├── public/                  # Tài nguyên công khai
-├── package.json             # Cấu hình & dependencies
-├── vite.config.js           # Cấu hình Vite
-├── eslint.config.js         # Cấu hình ESLint
-└── README.md                # Tài liệu này
+│   ├── assets/
+│   │   ├── avatar/              # Ảnh đại diện
+│   │   ├── company-logo/        # Logo tổ chức cấp chứng chỉ (Google, Anthropic...)
+│   │   └── hero.png             # Ảnh khu vực hero (đầu trang)
+│   │
+│   ├── components/              # Component React theo từng section
+│   │   ├── AboutMe.jsx
+│   │   ├── ArchitectureFlow.jsx # Sơ đồ kiến trúc pipeline dữ liệu
+│   │   ├── Certifications.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Education.jsx        # Học vấn / nghiên cứu / hoạt động
+│   │   ├── Navbar.jsx
+│   │   ├── Projects.jsx         # Danh sách dự án + nút Live Dashboard / Code
+│   │   ├── ScrollToTop.jsx      # Nút cuộn lên đầu trang
+│   │   └── Techstack.jsx
+│   │
+│   ├── data/                    # Dữ liệu nội dung — chỉnh ở đây, không cần sửa component
+│   │   ├── certifications.json  # Danh sách chứng chỉ & giải thưởng
+│   │   └── projects.json        # Danh sách dự án
+│   │
+│   ├── App.jsx                 # Component gốc, sắp xếp thứ tự các section
+│   ├── index.css               # Style toàn cục + biến màu chủ đạo
+│   └── main.jsx                # Điểm khởi chạy ứng dụng
+│
+├── index.html                 # HTML gốc, chứa thẻ meta và favicon
+├── package.json               # Cấu hình và dependencies
+└── README.md
 ```
 
----
+## Cài đặt và chạy local
 
-## 📦 Các Component Chính
+Yêu cầu: đã cài [Node.js](https://nodejs.org/) phiên bản 18 trở lên.
 
-### 1. **Navbar** (`Navbar.jsx`)
-- Thanh điều hướng cố định ở đầu trang
-- Chứa các liên kết nhanh đến các phần khác nhau
-
-### 2. **AboutMe** (`AboutMe.jsx`)
-- Giới thiệu về bản thân, lý lịch cá nhân
-- Hiển thị ảnh đại diện và mô tả về bạn
-
-### 3. **Techstack** (`Techstack.jsx`)
-- Danh sách công nghệ, ngôn ngữ lập trình, công cụ bạn sử dụng
-- Hiển thị các kỹ năng kỹ thuật
-
-### 4. **Experience** (`Experience.jsx`)
-- Lịch sử công việc và kinh nghiệm chuyên môn
-- Mô tả các vị trí đã giữ và thành tích đạt được
-
-### 5. **Education** (`Projects.jsx`)
-- Các dự án đã thực hiện hoặc đang thực hiện
-- Liên kết tới GitHub, demo, hoặc mô tả chi tiết dự án
-
-### 6. **Certifications** (`Certifications.jsx`)
-- Danh sách các chứng chỉ, giấy phép, giải thưởng
-- Hiển thị từ file `certifications.json`
-
-### 7. **Contact** (`Contact.jsx`)
-- Biểu mẫu liên hệ để người dùng gửi tin nhắn
-- Thông tin liên lạc: email, điện thoại, mạng xã hội
-
-### 8. **ScrollToTop** (`ScrollToTop.jsx`)
-- Nút floating để cuộn lên đầu trang
-- Cải thiện trải nghiệm người dùng
-
----
-
-## 📊 Tệp Dữ Liệu
-
-### **certifications.json**
-Chứa danh sách chứng chỉ với các thông tin như:
-- Tên chứng chỉ
-- Tổ chức cấp
-- Thời gian
-- Liên kết xác minh
-
-### **projects.json**
-Chứa danh sách dự án với chi tiết:
-- Tên dự án
-- Mô tả
-- Công nghệ sử dụng
-- Liên kết GitHub, demo
-- Hình ảnh thumbnail
-
----
-
-## 🚀 Hướng Dẫn Chạy
-
-### **Cài Đặt Dependencies**
 ```bash
+# 1. Clone repo về máy
+git clone https://github.com/BuiHang-stp/personal-websites-portfolio.git
+cd personal-websites-portfolio
+
+# 2. Cài dependencies
 npm install
-```
 
-### **Chạy Dev Server**
-```bash
+# 3. Chạy môi trường phát triển
 npm run dev
 ```
-Trang web sẽ chạy tại `http://localhost:5173` với HMR (Hot Module Replacement)
 
-### **Build Production**
+Mở đường dẫn hiện trên terminal (thường là http://localhost:5173) trên trình duyệt.
+
+## Build và deploy
+
 ```bash
+# Build bản production vào thư mục dist/
 npm run build
+
+# Xem thử bản build trước khi deploy
+npm run preview
 ```
 
-### **Chạy Với Script**
-```bash
-./run_server.sh
-```
+Trang được deploy bằng Vercel: đẩy code lên GitHub, import repo vào Vercel là tự động build và deploy. Từ đó mỗi lần git push Vercel sẽ tự cập nhật lại trang.
+
+## Cách cập nhật nội dung
+
+Phần lớn nội dung nằm trong thư mục `src/data/`, chỉnh trực tiếp file JSON là được, không cần đụng vào code:
+
+- **Thêm / sửa dự án** → `src/data/projects.json`
+- **Thêm / sửa chứng chỉ** → `src/data/certifications.json`
+- **Sửa giới thiệu, học vấn, hoạt động** → file tương ứng trong `src/components/`
+- **Đổi màu chủ đạo** → biến màu trong `src/index.css`
+
+## Ghi nhận & Nguồn tham khảo
+
+- Thiết kế portfolio được tham khảo từ các template portfolio mã nguồn mở dành cho developer.
+- Xây dựng bằng React và Vite.
+- Logo của các công ty được lấy từ nguồn chính thức của từng tổ chức.
+
+## Liên hệ
+
+- **Email:** [buihang.work@gmail.com](mailto:buihang.work@gmail.com)
+- **LinkedIn:** [linkedin.com/in/buithuhang](https://www.linkedin.com/in/buithuhang/)
+- **GitHub:** [github.com/BuiHang-stp](https://github.com/BuiHang-stp)
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng
-
-- **React** - UI library
-- **Vite** - Build tool & dev server
-- **Tailwind CSS / CSS** - Styling
-- **Lucide React** - Icon library
-- **React Icons** - Icon components
-- **ESLint** - Code quality
-
----
-
-## 📝 Ghi Chú
-
-- Dự án được tối ưu hóa cho thiết bị di động (responsive design)
-- Sử dụng Intersection Observer cho animation khi scroll
-- Hỗ trợ dark mode thông qua CSS variables
-- Hiệu suất cao với lazy loading
-
-## 📄 License
-
-Xem file LICENSE để biết thêm chi tiết.
+© 2026 Bùi Thu Hằng

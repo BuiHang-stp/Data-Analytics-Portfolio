@@ -15,7 +15,7 @@ import mongodbLogo from '../assets/company-logo/mongodb.png';
 import worldquantLogo from '../assets/company-logo/worldquant.jpg';
 import xomdataLogo from '../assets/company-logo/xomdata.svg';
 import britishCouncilLogo from '../assets/company-logo/britishcouncil.png';
-import anthropicLogo from '../assets/company-logo/anthropic .png';
+import anthropicLogo from '../assets/company-logo/anthropic.png';
 import otherLogo from '../assets/company-logo/other.png';
 
 const ORG_LOGOS = {
