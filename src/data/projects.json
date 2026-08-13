@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "NovaBank – Credit Risk Analytics",
+    "description": "Credit risk analysis on a 32,574-loan portfolio. Identified a segment holding 10.4% of loans but 29.4% of defaults, and a DTI breakpoint at 0.40 — turned into underwriting recommendations. Delivered a 4-page Power BI dashboard (live link).",
+    "url": "https://github.com/BuiHang-stp/Credit-Risk-Analytics-Nova-Bank",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "tags": ["Credit Risk", "Business Intelligence", "Banking", "Data Analytics"],
+    "techstack": ["Python", "SQL Server", "Power BI", "DAX"]
+  },
+  {
+    "id": 2,
+    "title": "Bank Transactions Analytics",
+    "description": "End-to-end ELT pipeline over 20,000 transactions (8,025 customers, 29 months) with 100% row reconciliation. Star schema (6 dims, 1 fact) with data-quality tests; Power BI report answering 12 business questions.",
+    "url": "https://github.com/BuiHang-stp/Banking-Transactions",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "tags": ["Data Analytics", "Business Intelligence", "ELT Pipeline", "Banking"],
+    "techstack": ["PostgreSQL", "Python", "SQL", "Power BI"]
+  },
+  {
+    "id": 3,
+    "title": "Financial Distress Early-Warning Model",
+    "description": "Early-warning classifier for financial distress across Nasdaq-100 firms (45 indicators, 2017–2022). Time-based split to prevent look-ahead bias; improved F1 from 69.2% to 75.9% via causal feature weighting, beating the classical baseline (74.1%).",
+    "url": "https://github.com/BuiHang-stp/Financial-distress",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0,
+    "tags": ["Machine Learning", "Graph Neural Networks", "Financial Analytics", "Research"],
+    "techstack": ["Python", "scikit-learn", "GNN", "pandas"]
+  },
+  {
+    "id": 4,
+    "title": "Financial Data Analysis with Vietstock",
+    "description": "Financial performance analysis of ~30 Vietnamese listed companies from Vietstock statements. Computed ratios and sector comparisons in Excel (PivotTables), including sector-wise tariff/election impact.",
+    "url": "https://github.com/BuiHang-stp/Financial-Data-Analysis",
+    "language": "R",
+    "stars": 0,
+    "forks": 0,
+    "tags": ["Financial Analysis", "Excel", "Data Analytics", "Vietnam Stocks"],
+    "techstack": ["Excel", "PivotTables", "R Markdown", "Vietstock"]
+  }
+]

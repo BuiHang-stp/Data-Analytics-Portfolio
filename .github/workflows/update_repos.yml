@@ -1,0 +1,40 @@
+name: Daily Repos Update
+
+on:
+  schedule:
+    # GitHub Actions không hỗ trợ random thời gian thực sự trong cron.
+    # Nên mình cài đặt 3 khung giờ ngẫu nhiên rải rác trong ngày (ví dụ: 2:30, 14:30, 20:30 UTC).
+    - cron: '30 2,14,20 * * *'
+  workflow_dispatch: # Cho phép bạn bấm nút Run manuel bằng tay trên giao diện Github Actions
+
+jobs:
+  update-repos-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Cấp quyền cho bot tự tạo commit
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run parse_repos.py
+        run: python parse_repos.py
+
+      - name: Check if there are any changes
+        id: git-check
+        run: |
+          git status --porcelain repos_analysis.json community_stats.json | grep -q . && echo "changes=true" >> $GITHUB_OUTPUT || echo "No changes detected"
+
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add repos_analysis.json community_stats.json
+          git commit -m "chore(auto): daily update repos & community data"
+          git push

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Monogram X·D (Xóm Data) — hệ thiết kế chung với jobs (X·J) + dataset (X·D):
+       tile gradient dọc #3B82F6→#2563EB, nét trắng. Đồng bộ 2026-07-08. logo.svg === favicon.svg -->
+  <defs>
+    <linearGradient id="xd-grad" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#xd-grad)"/>
+  <g stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M9 9 L15 16"/>
+    <path d="M15 9 L9 16"/>
+    <path d="M20 9 V23"/>
+    <path d="M20 9 C26 9 26 23 20 23"/>
+  </g>
+</svg>
