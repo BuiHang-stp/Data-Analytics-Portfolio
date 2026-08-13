@@ -51,7 +51,7 @@ Các dự án trong portfolio tập trung vào những kỹ năng mình muốn �
 personal-websites-portfolio/
 │
 ├── public/
-│   ├── favicon.jpg              # Favicon của trang
+│   ├── favicon.png              # Favicon của trang
 │   └── icons.svg
 │
 ├── src/
