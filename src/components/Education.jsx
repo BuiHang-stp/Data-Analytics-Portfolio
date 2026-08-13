@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, Award, ExternalLink, Calendar, ChevronDown, Check } from 'lucide-react';
+import { GraduationCap, Award, Users, ExternalLink, Calendar, ChevronDown, Check } from 'lucide-react';
 import vnuisLogo from '../assets/company-logo/vnuis.png';
 
 export default function Education() {
@@ -8,7 +8,8 @@ export default function Education() {
 
   const tabOptions = [
     { id: 'degree', label: 'Degree', icon: <GraduationCap size={16} />, color: 'var(--primary)', count: 1 },
-    { id: 'research', label: 'Research & Awards', icon: <Award size={16} />, color: 'var(--secondary)', count: 2 }
+    { id: 'research', label: 'Research & Awards', icon: <Award size={16} />, color: 'var(--secondary)', count: 2 },
+    { id: 'activities', label: 'Activities', icon: <Users size={16} />, color: '#7C3AED', count: 3 }
   ];
 
   const educationData = {
@@ -44,6 +45,50 @@ export default function Education() {
         isCurrent: false,
         logo: vnuisLogo,
         description: 'Tobacco tax rates and consumer behaviour in Vietnam. Project Lead: led research design, data analysis, and report writing.'
+      }
+    ],
+    activities: [
+      {
+        company: 'VNU International School',
+        companyFull: 'Vietnam National University - International School',
+        url: 'https://is.vnu.edu.vn/',
+        role: 'Star Awards 2023: Vietnamese Youth with Cyberspace',
+        period: 'Sep 2023 – Dec 2023',
+        isCurrent: false,
+        logo: vnuisLogo,
+        bullets: [
+          'Created exam questions, prepared slides, and proctored rounds 1–2 of the competition.',
+          'Coordinated the regional finals event for ~500 attendees and managed Thai Nguyen contestants in the national finals.',
+          'Worked with stakeholders to organize and coordinate the event (70,000+ contestants, 183 universities nationwide).'
+        ]
+      },
+      {
+        company: 'VNU International School',
+        companyFull: 'Vietnam National University - International School',
+        url: 'https://is.vnu.edu.vn/',
+        role: 'Academic & Scientific Research Board — Content Member',
+        period: 'Feb 2023 – Oct 2025',
+        isCurrent: false,
+        logo: vnuisLogo,
+        bullets: [
+          'Co-organized academic and student events with internal teams and partner organizations.',
+          'Built event timelines and coordinated task execution across team members.',
+          'Wrote content and supported communications for academic and research events.'
+        ]
+      },
+      {
+        company: 'VNU International School',
+        companyFull: 'Vietnam National University - International School',
+        url: 'https://is.vnu.edu.vn/',
+        role: 'Chikup Workshop — Organizing Assistant',
+        period: 'Dec 2022 – Sep 2023',
+        isCurrent: false,
+        logo: vnuisLogo,
+        bullets: [
+          'Managed supplies, materials, and event resources within an allocated budget.',
+          'Coordinated with external venue partners to run an event for ~200 attendees.',
+          'Supported scheduling and on-site coordination to ensure smooth delivery.'
+        ]
       }
     ]
   };
@@ -307,24 +352,37 @@ export default function Education() {
                     />
                   </div>
 
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      fontSize: '1.15rem',
-                      fontWeight: 800,
-                      fontFamily: 'Space Grotesk',
-                      color: activeTabColor,
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.35rem'
-                    }}
-                  >
-                    {item.company}
-                    <ExternalLink size={14} />
-                  </a>
+                  {activeTab === 'degree' ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        fontSize: '1.15rem',
+                        fontWeight: 800,
+                        fontFamily: 'Space Grotesk',
+                        color: activeTabColor,
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.35rem'
+                      }}
+                    >
+                      {item.company}
+                      <ExternalLink size={14} />
+                    </a>
+                  ) : (
+                    <span
+                      style={{
+                        fontSize: '1.15rem',
+                        fontWeight: 800,
+                        fontFamily: 'Space Grotesk',
+                        color: activeTabColor
+                      }}
+                    >
+                      {item.company}
+                    </span>
+                  )}
 
                   <span style={{ color: 'var(--outline-low)', fontSize: '1rem' }}>•</span>
 
@@ -370,16 +428,32 @@ export default function Education() {
               </div>
 
               {/* Description Body */}
-              <p style={{
-                color: 'var(--text-muted)',
-                fontSize: '0.9rem',
-                lineHeight: 1.6,
-                margin: 0,
-                position: 'relative',
-                zIndex: 1
-              }}>
-                {item.description}
-              </p>
+              {item.bullets && item.bullets.length > 0 ? (
+                <ul style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.9rem',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  paddingLeft: '1.25rem',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.bullets.map((b, i) => (
+                    <li key={i} style={{ marginBottom: '0.35rem' }}>{b}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.9rem',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {item.description}
+                </p>
+              )}
             </div>
           ))}
         </div>

@@ -5,7 +5,8 @@ import {
   SiDatabricks, SiSupabase, SiApachespark, SiAirbyte, SiSelenium,
   SiGooglecloud, SiGooglebigquery, SiLooker, SiApachesuperset,
   SiMetabase, SiGoogleanalytics, SiJira, SiConfluence, SiFigma,
-  SiNotion, SiDbeaver, SiMongodb, SiDocker, SiKubernetes
+  SiNotion, SiDbeaver, SiMongodb, SiDocker, SiKubernetes,
+  SiGithub
 } from 'react-icons/si';
 import reposData from '../data/projects.json';
 import { techStackData } from './Techstack';
@@ -149,16 +150,15 @@ export default function Projects() {
 
         <div className="card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: '2.5rem', justifyContent: 'center' }}>
           {paginatedProjects.map((repo, idx) => (
-            <a key={repo.title || repo.id || idx} href={repo.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div className="glass-panel equal-panel" style={{ height: '100%', transition: 'transform 0.3s', border: '1px solid var(--outline-low)', display: 'flex', flexDirection: 'column' }}>
+            <div key={repo.title || repo.id || idx} className="glass-panel equal-panel" style={{ height: '100%', transition: 'transform 0.3s', border: '1px solid var(--outline-low)', display: 'flex', flexDirection: 'column' }}>
                 {/* Header */}
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
                   <Database size={24} color="var(--primary)" />
                 </div>
 
-                {/* Title and external link */}
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', wordBreak: 'break-word' }}>
-                  {repo.title} <ExternalLink size={16} color="var(--primary)" />
+                {/* Title */}
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', wordBreak: 'break-word' }}>
+                  {repo.title}
                 </h3>
 
                 {/* Description */}
@@ -166,43 +166,99 @@ export default function Projects() {
                   {repo.description}
                 </p>
 
-                {/* Tech Stack */}
-                {repo.techstack && repo.techstack.length > 0 && (
-                  <div style={{ marginTop: 'auto' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600' }}>
-                      <Code2 size={12} /> TECH STACK
-                    </div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                      {sortTechStack(repo.techstack).slice(0, 4).map(tech => {
-                        const color = techColors[tech] || '#8B5CF6';
-                        const rawIcon = centralizedTechIcons[tech] || fallbackTechIcons[tech];
-                        const icon = React.isValidElement(rawIcon) ? React.cloneElement(rawIcon, { size: 14 }) : null;
+                {/* Footer: Tech Stack + Live Demo */}
+                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {repo.techstack && repo.techstack.length > 0 && (
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600' }}>
+                        <Code2 size={12} /> TECH STACK
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                        {sortTechStack(repo.techstack).slice(0, 4).map(tech => {
+                          const color = techColors[tech] || '#8B5CF6';
+                          const rawIcon = centralizedTechIcons[tech] || fallbackTechIcons[tech];
+                          const icon = React.isValidElement(rawIcon) ? React.cloneElement(rawIcon, { size: 14 }) : null;
 
-                        return (
-                          <span key={tech} style={{
-                            background: `${color}20`,
-                            color: color,
-                            border: `1px solid ${color}50`,
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.35rem',
-                            padding: '0.35rem 0.6rem',
-                            fontSize: '0.7rem',
-                            fontWeight: 700,
-                            borderRadius: '4px',
-                            boxShadow: `0 0 6px ${color}25`,
-                            whiteSpace: 'nowrap'
-                          }}>
-                            {icon && <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>{icon}</span>}
-                            {tech}
-                          </span>
-                        );
-                      })}
+                          return (
+                            <span key={tech} style={{
+                              background: `${color}20`,
+                              color: color,
+                              border: `1px solid ${color}50`,
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.35rem',
+                              padding: '0.35rem 0.6rem',
+                              fontSize: '0.7rem',
+                              fontWeight: 700,
+                              borderRadius: '4px',
+                              boxShadow: `0 0 6px ${color}25`,
+                              whiteSpace: 'nowrap'
+                            }}>
+                              {icon && <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: 1 }}>{icon}</span>}
+                              {tech}
+                            </span>
+                          );
+                        })}
+                      </div>
                     </div>
+                  )}
+
+                  {/* Action buttons: Live Dashboard (primary) + Code (secondary) */}
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    {repo.demo && (
+                      <a
+                        href={repo.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-live-dashboard"
+                        style={{
+                          flex: 2,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '6px',
+                          padding: '10px 14px',
+                          borderRadius: '8px',
+                          background: '#2860c4',
+                          color: '#fff',
+                          textDecoration: 'none',
+                          fontWeight: 700,
+                          fontSize: '0.85rem',
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          transition: 'background 0.2s ease'
+                        }}
+                      >
+                        <ExternalLink size={16} color="#fff" /> Live Dashboard
+                      </a>
+                    )}
+                    <a
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-code"
+                      style={{
+                        flex: 1,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        padding: '10px 14px',
+                        borderRadius: '8px',
+                        background: 'transparent',
+                        border: '1px solid #85B7EB',
+                        color: '#185FA5',
+                        textDecoration: 'none',
+                        fontWeight: 700,
+                        fontSize: '0.85rem',
+                        fontFamily: 'Space Grotesk, sans-serif',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      <SiGithub size={16} /> Code
+                    </a>
                   </div>
-                )}
+                </div>
               </div>
-            </a>
           ))}
         </div>
 
@@ -282,6 +338,16 @@ export default function Projects() {
           </div>
         )}
       </div>
+
+      <style>{`
+        .btn-live-dashboard:hover {
+          background: #1e4a9c !important;
+        }
+        .btn-code:hover {
+          background: rgba(133, 183, 235, 0.12) !important;
+          border-color: #185FA5 !important;
+        }
+      `}</style>
     </section>
   );
 }
