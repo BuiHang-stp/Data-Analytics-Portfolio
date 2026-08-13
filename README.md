@@ -51,7 +51,7 @@ Các dự án trong portfolio tập trung vào những kỹ năng mình muốn �
 personal-websites-portfolio/
 │
 ├── public/
-│   ├── favicon.svg              # Favicon của trang
+│   ├── favicon.jpg              # Favicon của trang
 │   └── icons.svg
 │
 ├── src/
@@ -126,8 +126,7 @@ Phần lớn nội dung nằm trong thư mục `src/data/`, chỉnh trực tiế
 ## Ghi nhận & Nguồn tham khảo
 
 - Thiết kế portfolio được tham khảo từ các template portfolio mã nguồn mở dành cho developer.
-- Xây dựng bằng React và Vite.
-- Logo của các công ty được lấy từ nguồn chính thức của từng tổ chức.
+- Logo được tham khảo từ các nguồn công khai trên Internet.
 
 ## Cảm ơn bạn đã đọc đến đây
 
