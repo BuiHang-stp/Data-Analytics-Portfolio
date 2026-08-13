@@ -454,7 +454,7 @@ h3,
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, #5b9bd5, #1e4a9c);
   z-index: 1000;
   transition: width 0.1s ease-out;
 }

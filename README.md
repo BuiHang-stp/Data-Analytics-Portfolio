@@ -9,11 +9,9 @@ Website portfolio cá nhân giới thiệu bản thân, học vấn, chứng ch�
 
 ## Giới thiệu
 
-Đây là trang portfolio cá nhân của mình — một sinh viên tốt nghiệp ngành Business Data Analytics, định hướng trở thành Data Analyst trong lĩnh vực ngân hàng và fintech.
+Xin chào, đây là trang portfolio cá nhân, nơi mình chia sẻ các dự án thực hiện trong quá trình học Business Data Analytics. Mình định hướng trở thành Data Analyst, đặc biệt quan tâm đến lĩnh vực ngân hàng và fintech.
 
-Trang tập hợp các dự án phân tích dữ liệu mình đã thực hiện (từ xây dựng pipeline dữ liệu, thiết kế dashboard, đến mô hình cảnh báo sớm), cùng với học vấn, chứng chỉ và hoạt động — giúp nhà tuyển dụng nắm được năng lực của mình một cách nhanh chóng.
-
-Website được xây dựng bằng React + Vite, thiết kế dạng single-page cuộn, tối giản và tập trung vào nội dung.
+Các dự án trong portfolio tập trung vào những kỹ năng mình muốn áp dụng trong công việc thực tế, như xác định bài toán từ nhu cầu kinh doanh, SQL, phân tích dữ liệu, xây dựng data pipeline, Power BI và báo cáo. Bên cạnh đó là thông tin về học vấn, chứng chỉ và các hoạt động mình đã tham gia.
 
 ## Mục lục
 
@@ -27,7 +25,7 @@ Website được xây dựng bằng React + Vite, thiết kế dạng single-pag
   - [Build và deploy](#build-và-deploy)
   - [Cách cập nhật nội dung](#cách-cập-nhật-nội-dung)
   - [Ghi nhận \& Nguồn tham khảo](#ghi-nhận--nguồn-tham-khảo)
-  - [Liên hệ](#liên-hệ)
+  - [Cảm ơn bạn đã đọc đến đây](#cảm-ơn-bạn-đã-đọc-đến-đây)
 
 ## Tính năng
 
@@ -131,12 +129,11 @@ Phần lớn nội dung nằm trong thư mục `src/data/`, chỉnh trực tiế
 - Xây dựng bằng React và Vite.
 - Logo của các công ty được lấy từ nguồn chính thức của từng tổ chức.
 
-## Liên hệ
+## Cảm ơn bạn đã đọc đến đây
+
+Nếu bạn có góp ý, câu hỏi hay muốn trao đổi, mình rất vui được kết nối
 
 - **Email:** [buihang.work@gmail.com](mailto:buihang.work@gmail.com)
 - **LinkedIn:** [linkedin.com/in/buithuhang](https://www.linkedin.com/in/buithuhang/)
 - **GitHub:** [github.com/BuiHang-stp](https://github.com/BuiHang-stp)
 
----
-
-© 2026 Bùi Thu Hằng
