@@ -91,8 +91,8 @@ Yêu cầu: đã cài [Node.js](https://nodejs.org/) phiên bản 18 trở lên.
 
 ```bash
 # 1. Clone repo về máy
-git clone https://github.com/BuiHang-stp/personal-websites-portfolio.git
-cd personal-websites-portfolio
+git clone https://github.com/BuiHang-stp/Data-Analytics-Portfolio.git
+cd Data-Analytics-Portfolio
 
 # 2. Cài dependencies
 npm install
