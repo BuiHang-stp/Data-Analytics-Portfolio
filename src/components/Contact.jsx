@@ -18,7 +18,9 @@ export default function Contact() {
       <div className="container" style={{ textAlign: 'center' }}>
         <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Let's Connect</h2>
         <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 3rem auto', lineHeight: 1.6 }}>
-          I'm always open to discussing new data pipelines, system designs, open-source projects, or potential opportunities. 
+          Thank you for reading this far. I'd love to connect,
+          <br />
+          whether it's about a role in data analytics, a project, or a shared interest in turning data into decisions.
         </p>
 
         <motion.div 

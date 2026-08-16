@@ -127,10 +127,21 @@ export default function AboutMe() {
                 href="/CV_BuiThuHang.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary"
-                style={{ padding: '0.75rem 1.5rem', borderRadius: '12px', gap: '0.5rem', border: '1px solid var(--outline-low)' }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.75rem 1.5rem',
+                  borderRadius: '12px',
+                  background: '#ffffff',
+                  color: 'var(--secondary)',
+                  border: '1px solid rgba(91, 155, 213, 0.25)',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 8px rgba(91, 155, 213, 0.08)'
+                }}
               >
-                <FileText size={18} /> My CV
+                <FileText size={18} color="var(--secondary)" /> My CV
               </motion.a>
             </div>
 
