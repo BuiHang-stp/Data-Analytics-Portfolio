@@ -243,33 +243,39 @@ export default function DataWorkflow() {
                       boxShadow: isActive ? '0 10px 25px rgba(30, 74, 156, 0.15)' : '0 2px 8px rgba(0,0,0,0.02)',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.65rem',
+                      gap: '0.55rem',
                       position: 'relative'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', width: '100%' }}>
                       <span style={{
-                        fontSize: '0.68rem', fontWeight: 800, textTransform: 'uppercase',
-                        letterSpacing: '0.08em', color: isActive ? step.accentColor : 'var(--text-muted)'
+                        fontSize: '0.85rem',
+                        fontWeight: 700,
+                        fontFamily: "'Space Grotesk', 'Plus Jakarta Sans', sans-serif",
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.03em',
+                        lineHeight: 1.25,
+                        color: isActive ? step.accentColor : 'var(--text-main)'
                       }}>
                         {step.stage}
                       </span>
                       <div style={{
                         padding: '0.4rem', borderRadius: '8px',
                         background: isActive ? 'var(--tag-bg)' : 'var(--surface-low)',
-                        display: 'flex'
+                        display: 'flex',
+                        flexShrink: 0
                       }}>
                         {step.icon}
                       </div>
                     </div>
-                    <div>
-                      <h4 style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'Space Grotesk', lineHeight: 1.25, margin: '0 0 0.2rem 0', color: 'var(--text-main)' }}>
-                        {step.title}
-                      </h4>
-                      <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-                        {step.tagline}
-                      </span>
-                    </div>
+                    <span style={{
+                      fontSize: '0.82rem',
+                      color: 'var(--text-muted)',
+                      fontWeight: 400,
+                      lineHeight: 1.4
+                    }}>
+                      {step.tagline}
+                    </span>
                   </button>
                 );
               })}
