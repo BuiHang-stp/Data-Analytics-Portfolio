@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/CV_BuiThuHang.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Bui Thu Hang_Data Analyst_CV.pdf\""
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, MapPin, Sparkles, Copy, Check } from 'lucide-react';
+import { ArrowRight, MapPin, Sparkles, Copy, Check, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SiGithub as Github } from 'react-icons/si';
 import { FaLinkedin as Linkedin } from 'react-icons/fa';
@@ -119,6 +119,18 @@ export default function AboutMe() {
                 style={{ padding: '0.75rem 1.5rem', borderRadius: '12px' }}
               >
                 Explore Work <ArrowRight size={18} />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                href="/CV_BuiThuHang.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                style={{ padding: '0.75rem 1.5rem', borderRadius: '12px', gap: '0.5rem', border: '1px solid var(--outline-low)' }}
+              >
+                <FileText size={18} /> My CV
               </motion.a>
             </div>
 
