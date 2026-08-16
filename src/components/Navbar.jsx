@@ -61,7 +61,7 @@ export default function Navbar() {
     { name: 'About Me', href: '#about' },
     { name: 'Education', href: '#education' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Architecture & Stack', href: '#architecture' },
+    { name: 'Tech Stack', href: '#architecture' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -214,7 +214,7 @@ export default function Navbar() {
           className={`mobile-bottom-item ${activeSection === 'architecture' ? 'active' : ''}`}
         >
           <Workflow size={18} />
-          <span>Stack</span>
+          <span>Tech Stack</span>
         </a>
         <a 
           href="#contact" 

@@ -1,238 +1,163 @@
 import React, { useState } from 'react';
 import {
-  Database, Terminal, Cloud, BarChart3, Workflow,
-  PieChart, Code, Download, Layers, ShieldCheck,
-  Eye, FileText, Layout, Users, ArrowRight, Activity, CheckCircle2,
-  Grid, GitBranch, ArrowLeft
+  Database, Terminal, BarChart3, Code, Download, Layers,
+  Eye, FileText, Users, ArrowRight, CheckCircle2,
+  Grid, GitBranch, ArrowLeft, MessageSquare
 } from 'lucide-react';
-import {
-  SiPython, SiPostgresql, SiDbt, SiApacheairflow, SiSnowflake,
-  SiDatabricks, SiSupabase, SiApachespark, SiAirbyte, SiSelenium,
-  SiGooglecloud, SiGooglebigquery, SiLooker, SiApachesuperset,
-  SiMetabase, SiGoogleanalytics, SiJira, SiConfluence, SiFigma,
-  SiNotion, SiDbeaver, SiMongodb
-} from 'react-icons/si';
+import { SiPython, SiPostgresql } from 'react-icons/si';
 
-export default function ArchitectureFlow() {
+export default function DataWorkflow() {
   const [activeStep, setActiveStep] = useState(0);
   const [viewMode, setViewMode] = useState('pipeline'); // 'pipeline' | 'matrix'
 
   // Stage-by-stage pipeline flow (6 stages for 3x2 Selector Grid)
   const flowSteps = [
     {
-      id: 'ingestion',
-      stage: '01. Ingestion',
-      title: 'Sources & Ingestion',
-      icon: <Download size={22} color="var(--primary)" />,
-      accentColor: 'var(--primary)',
+      id: 'business',
+      stage: '01. Business Understanding',
+      title: 'Business Understanding',
+      icon: <MessageSquare size={22} color="#B07A00" />,
+      accentColor: '#B07A00',
       tools: [
-        { name: 'Airbyte', icon: <SiAirbyte color="#6557FF" /> },
-        { name: 'Fivetran', icon: <Code size={14} color="#005DFF" /> },
-        { name: 'DLT', icon: <Download size={14} color="#FF694B" /> },
-        { name: 'Selenium', icon: <SiSelenium color="#43B02A" /> },
-        { name: 'BeautifulSoup', icon: <Code size={14} color="#3776AB" /> },
-        { name: 'Python ETL', icon: <SiPython color="#3776AB" /> },
-        { name: 'PostgreSQL / MySQL', icon: <SiPostgresql color="#336791" /> },
+        { name: 'Stakeholder Discussion', icon: <Users size={14} color="var(--primary)" /> },
+        { name: 'Requirement Analysis', icon: <FileText size={14} color="#6B7280" /> },
       ],
-      tagline: 'Multi-source Data Extraction & Ingestion',
-      description: 'Extracting high-volume transactional logs, payment streams, and e-commerce APIs across VNPAY, GPBank, and UpBase systems.',
+      tagline: 'From Business Questions to Analytical Problems',
+      description: 'Understanding stakeholder needs and business context, then translating open-ended business questions into concrete analytical problems.',
       highlights: [
-        'Automated CDC (Change Data Capture) & batch syncs',
-        'Partitioned daily raw file extraction to cloud storage',
-        'API & Web Scraping (Selenium / BeautifulSoup)'
+        'Clarifying business needs & context',
+        'Framing analytical questions',
+        'Defining success metrics'
+      ]
+    },
+    {
+      id: 'collection',
+      stage: '02. Data Collection',
+      title: 'Sources & Collection',
+      icon: <Download size={22} color="#2563C7" />,
+      accentColor: '#2563C7',
+      tools: [
+        { name: 'Excel', icon: <FileText size={14} color="#217346" /> },
+        { name: 'CSV', icon: <FileText size={14} color="#6B7280" /> },
+      ],
+      tagline: 'Gathering Raw Datasets',
+      description: 'Collecting data from CSV/Excel files and publicly available sources, preparing the initial data intake for downstream analysis.',
+      highlights: [
+        'Gathering raw datasets from multiple sources',
+        'Initial data intake & consolidation',
+        'Documenting source provenance'
+      ]
+    },
+    {
+      id: 'profiling',
+      stage: '03. Profiling & Cleaning',
+      title: 'Data Profiling & Cleaning',
+      icon: <Eye size={22} color="#C85A5A" />,
+      accentColor: '#C85A5A',
+      tools: [
+        { name: 'Python', icon: <SiPython color="#3776AB" /> },
+        { name: 'pandas', icon: <Code size={14} color="#150458" /> },
+      ],
+      tagline: 'Data Quality & Consistency',
+      description: 'Exploring the data, running quality checks (nulls, duplicates, inconsistent values) and cleaning it into a reliable analytical dataset.',
+      highlights: [
+        'Data profiling & quality checks',
+        'Handling missing / inconsistent values',
+        'Deduplication & type standardization'
       ]
     },
     {
       id: 'storage',
-      stage: '02. Warehousing',
-      title: 'Platforms & Warehouses',
-      icon: <Layers size={22} color="#0284C7" />,
-      accentColor: '#0284C7',
+      stage: '04. Storage & Modeling',
+      title: 'Storage & Data Modeling',
+      icon: <Database size={22} color="#7652B8" />,
+      accentColor: '#7652B8',
       tools: [
-        { name: 'BigQuery', icon: <SiGooglebigquery color="#3367D6" /> },
-        { name: 'Snowflake', icon: <SiSnowflake color="#29B5E8" /> },
-        { name: 'Databricks', icon: <SiDatabricks color="#FF3621" /> },
         { name: 'PostgreSQL', icon: <SiPostgresql color="#336791" /> },
-        { name: 'GCP', icon: <SiGooglecloud color="#4285F4" /> },
-        { name: 'AWS', icon: <Cloud size={14} color="#FF9900" /> },
-        { name: 'Azure', icon: <Cloud size={14} color="#0078D4" /> },
-        { name: 'Supabase', icon: <SiSupabase color="#3ECF8E" /> },
-        { name: 'MongoDB', icon: <SiMongodb color="#13AA52" /> }
+        { name: 'SQL Server', icon: <Database size={14} color="#CC2927" /> },
+        { name: 'SQL', icon: <SiPostgresql color="#336791" /> },
       ],
-      tagline: 'Enterprise Cloud Data Warehousing',
-      description: 'Centralized cloud data warehouses serving as the single source of truth for all business and financial analytics domains.',
+      tagline: 'Layered Design & Star Schema',
+      description: 'Organizing data across raw → staging → marts layers, and designing star schemas with dimension and fact tables for analytical workloads.',
       highlights: [
-        'Separation of compute & storage for cost optimization',
-        'Role-based access control (RBAC) & data security',
-        'Clustered & partitioned tables for sub-second query performance'
+        'Layered design (raw / staging / marts)',
+        'Star schema (dimension & fact tables)',
+        'Data quality tests'
       ]
     },
     {
-      id: 'transformation',
-      stage: '03. Transformation',
-      title: 'dbt & Data Engineering',
-      icon: <Workflow size={22} color="#E11D48" />,
-      accentColor: '#E11D48',
+      id: 'analysis',
+      stage: '05. Analytics & Insights',
+      title: 'SQL Analysis',
+      icon: <Terminal size={22} color="#00875A" />,
+      accentColor: '#00875A',
       tools: [
-        { name: 'dbt Core/Cloud', icon: <SiDbt color="#FF694B" /> },
-        { name: 'Apache Spark', icon: <SiApachespark color="#E25A1C" /> },
         { name: 'SQL', icon: <SiPostgresql color="#336791" /> },
         { name: 'Python', icon: <SiPython color="#3776AB" /> },
-        { name: 'GitHub Actions', icon: <ShieldCheck size={14} color="var(--primary)" /> },
       ],
-      tagline: 'Kimball Dimensional Modeling & Testing',
-      description: 'Transforming raw schemas into production-ready Data Marts (Staging → Intermediate → Marts) with full CI/CD testing.',
+      tagline: 'Business-Question-Driven Queries',
+      description: 'Writing analytical queries to answer business questions and running statistical tests to validate patterns and hypotheses in the data.',
       highlights: [
-        'Automated dbt test assertions & documentation deployments',
-        'Star-schema & Snowflake dimensional data modeling',
-        'Slim CI PR checks via GitHub Actions'
+        'Business-question-driven queries',
+        'CTEs & window functions',
+        'Statistical testing'
       ]
     },
     {
-      id: 'orchestration',
-      stage: '04. Orchestration',
-      title: 'Workflow Orchestration',
-      icon: <Activity size={22} color="#7C3AED" />,
-      accentColor: '#7C3AED',
-      tools: [
-        { name: 'Apache Airflow', icon: <SiApacheairflow color="#017CEE" /> },
-        { name: 'Astronomer', icon: <Workflow size={14} color="#23D9FF" /> },
-        { name: 'Dagster', icon: <Workflow size={14} color="#1890FF" /> },
-        { name: 'Kestra', icon: <Workflow size={14} color="#FF6B6B" /> },
-        { name: 'Mage', icon: <Code size={14} color="#9D4EDD" /> }
-      ],
-      tagline: 'DAG Execution & Monitoring',
-      description: 'Scheduling complex DAG dependencies with SLA alerts, automatic retries, and real-time pipeline monitoring.',
-      highlights: [
-        'Modular Python DAG definitions & custom operators',
-        'Slack/Email alert triggers on pipeline failure',
-        'Backfill capability for historical data re-processing'
-      ]
-    },
-    {
-      id: 'serving',
-      stage: '05. BI & Analytics',
-      title: 'Executive BI & Serving',
-      icon: <BarChart3 size={22} color="#059669" />,
-      accentColor: '#059669',
+      id: 'visualization',
+      stage: '06. Visualization',
+      title: 'BI & Reporting',
+      icon: <BarChart3 size={22} color="#C76500" />,
+      accentColor: '#C76500',
       tools: [
         { name: 'Power BI', icon: <BarChart3 size={14} color="#F2C811" /> },
-        { name: 'Looker Studio', icon: <SiLooker color="#4285F4" /> },
-        { name: 'Superset', icon: <SiApachesuperset color="#00A2D3" /> },
-        { name: 'Metabase', icon: <SiMetabase color="#509EE3" /> },
-        { name: 'GA4 / Analytics', icon: <SiGoogleanalytics color="#E37400" /> },
-        { name: 'SmartLook', icon: <Eye size={14} color="#FF6B35" /> }
-      ],
-      tagline: 'Actionable Business Intelligence',
-      description: 'Delivering real-time executive dashboards, Cohort retention analysis, and financial KPIs for business decision-makers.',
-      highlights: [
-        'Automated semantic model refreshes',
-        'Interactive drill-down reports & executive KPIs',
-        'Self-service analytics for business teams'
-      ]
-    },
-    {
-      id: 'collaboration',
-      stage: '06. Dev & Ops',
-      title: 'Productivity & Collaboration',
-      icon: <Users size={22} color="#D97706" />,
-      accentColor: '#D97706',
-      tools: [
-        { name: 'Jira', icon: <SiJira color="#0052CC" /> },
-        { name: 'Confluence', icon: <SiConfluence color="#0052CC" /> },
-        { name: 'Figma', icon: <SiFigma color="#F24E1E" /> },
-        { name: 'VS Code', icon: <Code size={14} color="#007ACC" /> },
-        { name: 'DBeaver', icon: <SiDbeaver color="#382923" /> },
+        { name: 'DAX', icon: <Code size={14} color="#185ABD" /> },
         { name: 'Excel', icon: <FileText size={14} color="#217346" /> },
-        { name: 'Notion', icon: <SiNotion color="#000000" /> }
       ],
-      tagline: 'Cross-functional Agile Workflow',
-      description: 'Utilizing modern developer tooling, documentation standards, and agile collaboration platforms for team efficiency.',
+      tagline: 'From Data to Actionable Insight',
+      description: 'Building interactive dashboards and reports that turn analytical results into insights business teams can act on.',
       highlights: [
-        'Agile sprint planning with Jira & Confluence',
-        'UI/UX wireframing for BI dashboards with Figma',
-        'Clean documentation in Notion & Markdown'
+        'Interactive dashboards',
+        'DAX measures',
+        'Actionable business insights'
       ]
     }
   ];
 
-  // Full Categorized Tech Stack Matrix Data
+  // Categorized Tech Stack Matrix Data
   const techCategories = [
     {
-      category: "Programming & Query Languages",
+      category: "Languages & Query",
       icon: <Terminal size={18} color="var(--primary)" />,
       items: [
         { name: "Python", icon: <SiPython color="#3776AB" /> },
-        { name: "SQL", icon: <SiPostgresql color="#336791" /> },
-        { name: "KQL", icon: <Database size={14} color="#0078D4" /> },
-        { name: "MQL", icon: <Database size={14} color="#13AA52" /> },
-        { name: "JQL", icon: <SiJira size={14} color="#0052CC" /> }
+        { name: "SQL", icon: <SiPostgresql color="#336791" /> }
       ]
     },
     {
-      category: "Data Ingestion & Collection (DE/AE focus)",
-      icon: <Download size={18} color="#6557FF" />,
+      category: "Databases & Storage",
+      icon: <Layers size={18} color="#7C3AED" />,
       items: [
-        { name: "Airbyte", icon: <SiAirbyte color="#6557FF" /> },
-        { name: "Fivetran", icon: <Code size={14} color="#005DFF" /> },
-        { name: "DLT", icon: <Download size={14} color="#FF694B" /> },
-        { name: "Selenium", icon: <SiSelenium color="#43B02A" /> },
-        { name: "BeautifulSoup", icon: <Code size={14} color="#3776AB" /> }
-      ]
-    },
-    {
-      category: "Transformation & Orchestration (AE focus)",
-      icon: <Workflow size={18} color="#E11D48" />,
-      items: [
-        { name: "dbt", icon: <SiDbt color="#FF694B" /> },
-        { name: "Airflow", icon: <SiApacheairflow color="#017CEE" /> },
-        { name: "Astronomer", icon: <Workflow size={14} color="#23D9FF" /> },
-        { name: "Apache Spark", icon: <SiApachespark color="#E25A1C" /> },
-        { name: "Dagster", icon: <Workflow size={14} color="#1890FF" /> },
-        { name: "Kestra", icon: <Workflow size={14} color="#FF6B6B" /> },
-        { name: "Mage", icon: <Code size={14} color="#9D4EDD" /> }
-      ]
-    },
-    {
-      category: "Data Platforms & Storage",
-      icon: <Layers size={18} color="#0284C7" />,
-      items: [
-        { name: "GCP", icon: <SiGooglecloud color="#4285F4" /> },
-        { name: "AWS", icon: <Cloud size={14} color="#FF9900" /> },
-        { name: "Azure", icon: <Cloud size={14} color="#0078D4" /> },
-        { name: "BigQuery", icon: <SiGooglebigquery color="#3367D6" /> },
-        { name: "Snowflake", icon: <SiSnowflake color="#29B5E8" /> },
-        { name: "Databricks", icon: <SiDatabricks color="#FF3621" /> },
         { name: "PostgreSQL", icon: <SiPostgresql color="#336791" /> },
-        { name: "SQL Server", icon: <Database size={14} color="#CC2927" /> },
-        { name: "Oracle", icon: <Database size={14} color="#F80000" /> },
-        { name: "MongoDB", icon: <SiMongodb color="#13AA52" /> },
-        { name: "Supabase", icon: <SiSupabase color="#3ECF8E" /> }
+        { name: "SQL Server", icon: <Database size={14} color="#CC2927" /> }
       ]
     },
     {
-      category: "BI, Analytics & Visualization (DA/BI focus)",
-      icon: <BarChart3 size={18} color="#059669" />,
+      category: "BI & Visualization",
+      icon: <BarChart3 size={18} color="#D97706" />,
       items: [
         { name: "Power BI", icon: <BarChart3 size={14} color="#F2C811" /> },
-        { name: "Looker Studio", icon: <SiLooker color="#4285F4" /> },
-        { name: "Superset", icon: <SiApachesuperset color="#00A2D3" /> },
-        { name: "Metabase", icon: <SiMetabase color="#509EE3" /> },
-        { name: "GA4 / Analytics", icon: <SiGoogleanalytics color="#E37400" /> },
-        { name: "SmartLook", icon: <Eye size={14} color="#FF6B35" /> }
+        { name: "DAX", icon: <Code size={14} color="#185ABD" /> },
+        { name: "Excel (Power Query, PivotTables)", icon: <FileText size={14} color="#217346" /> }
       ]
     },
     {
-      category: "Collaboration & Productivity Tools",
-      icon: <Users size={18} color="#D97706" />,
+      category: "Libraries & Tools",
+      icon: <Users size={18} color="#059669" />,
       items: [
-        { name: "Jira", icon: <SiJira color="#0052CC" /> },
-        { name: "Confluence", icon: <SiConfluence color="#0052CC" /> },
-        { name: "Figma", icon: <SiFigma color="#F24E1E" /> },
-        { name: "VS Code", icon: <Code size={14} color="#007ACC" /> },
-        { name: "DBeaver", icon: <SiDbeaver color="#382923" /> },
-        { name: "Excel", icon: <FileText size={14} color="#217346" /> },
-        { name: "Notion", icon: <SiNotion color="#000000" /> }
+        { name: "pandas", icon: <Code size={14} color="#150458" /> },
+        { name: "Git", icon: <GitBranch size={14} color="#F05032" /> },
+        { name: "VS Code", icon: <Code size={14} color="#007ACC" /> }
       ]
     }
   ];
@@ -241,7 +166,7 @@ export default function ArchitectureFlow() {
     <section id="architecture" className="section" style={{ position: 'relative' }}>
       <div className="container">
         <div style={{ marginBottom: '2.5rem' }}>
-          <h2 className="section-title">Data Architecture & Tech Stack</h2>
+          <h2 className="section-title">Data Workflow & Tech Stack</h2>
           <div style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -251,7 +176,7 @@ export default function ArchitectureFlow() {
             marginTop: '-1rem'
           }}>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, maxWidth: '640px' }}>
-              Select any architectural stage below to explore its pipeline workflow and integrated tech stack.
+              End-to-end approach to data analysis, from understanding the business question to delivering actionable insights. Select any stage to explore the tools involved.
             </p>
 
             {/* Mode Switcher Buttons */}

@@ -95,13 +95,12 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
-  /* Vinamilk Geometric Grid Overlay */
-  background-image: radial-gradient(rgba(91, 155, 213, 0.12) 1px, transparent 1px);
-  background-size: 36px 36px;
 }
 
+/* Light mode: soft blue dot grid */
 [data-theme="light"] body {
   background-image: radial-gradient(rgba(30, 74, 156, 0.1) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
 h1,

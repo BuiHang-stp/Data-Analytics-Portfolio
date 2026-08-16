@@ -63,7 +63,7 @@ personal-websites-portfolio/
 │   │
 │   ├── components/              # Component React theo từng section
 │   │   ├── AboutMe.jsx
-│   │   ├── ArchitectureFlow.jsx # Sơ đồ kiến trúc pipeline dữ liệu
+│   │   ├── DataWorkflow.jsx    # Sơ đồ workflow phân tích dữ liệu
 │   │   ├── Certifications.jsx
 │   │   ├── Contact.jsx
 │   │   ├── Education.jsx        # Học vấn / nghiên cứu / hoạt động
