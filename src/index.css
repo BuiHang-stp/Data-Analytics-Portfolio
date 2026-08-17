@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300..700&family=Inter:wght@300..900&display=swap');
 
 :root {
-  /* VINAMILK FRESH BLUE DESIGN TOKENS (DARK MODE DEFAULT) */
   --primary: #5b9bd5;         /* Bright fresh blue for dark bg contexts */
   --primary-dark: #2860c4;    /* Deeper blue variant */
   --on-primary: #0A1929;      /* Deep navy-black for high contrast on blue */
@@ -33,8 +32,7 @@
 }
 
 [data-theme="light"] {
-  /* VINAMILK FRESH BLUE HIGH-CONTRAST WARM CREAM PALETTE */
-  --primary: #2860c4;         /* Fresh Vinamilk Blue */
+  --primary: #2860c4;         /* Fresh Blue */
   --primary-dark: #1e4a9c;    /* Deep Blue for readable text/links/borders on cream */
   --on-primary: #FFFFFF;      /* White text on blue button */
   --secondary: #9E6B00;       /* Rich Deep Roasted Gold (high-contrast for stats & text) */
@@ -153,7 +151,7 @@ h3,
   background: radial-gradient(circle, rgba(184, 134, 11, 0.1) 0%, rgba(184, 134, 11, 0) 70%);
 }
 
-/* Glassmorphism Refined for Vinamilk Theme */
+/* Glassmorphism Refined for Theme */
 .glass-panel {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
