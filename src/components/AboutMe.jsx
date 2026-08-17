@@ -124,7 +124,7 @@ export default function AboutMe() {
               <motion.a
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                href="/CV_BuiThuHang.pdf"
+                href="/cv.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

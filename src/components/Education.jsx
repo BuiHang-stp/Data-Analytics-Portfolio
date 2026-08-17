@@ -22,7 +22,7 @@ export default function Education() {
         period: '2022 - 2026',
         isCurrent: false,
         logo: vnuisLogo,
-        description: 'GPA 3.53/4.0. Major in business data analytics.'
+        description: 'GPA: 3.53/4.0'
       }
     ],
     research: [

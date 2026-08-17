@@ -27,3 +27,20 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Private CV backup (contains original metadata)
+/assets/cv-original.pdf
+
+# Windows metadata files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+
+# Vercel CLI
+.vercel
+
+# Cache
+.eslintcache
+.vite/
