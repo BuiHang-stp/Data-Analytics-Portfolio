@@ -2,6 +2,21 @@
   "headers": [
     {
       "source": "/CV_BuiThuHang.pdf",
+      "has": [{ "type": "query", "key": "dl" }],
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"CV_ Bui Thu Hang_Business Data Analyst.pdf\"; filename*=UTF-8''CV_%20B%C3%B9i%20Thu%20H%E1%BA%B1ng_Business%20Data%20Analyst.pdf"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        }
+      ]
+    },
+    {
+      "source": "/CV_BuiThuHang.pdf",
+      "missing": [{ "type": "query", "key": "dl" }],
       "headers": [
         {
           "key": "Content-Disposition",

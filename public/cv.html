@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>CV_ Bùi Thu Hằng_Business Data Analyst</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <style>
@@ -255,7 +255,7 @@
         <a class="btn btn-icon" href="https://www.linkedin.com/in/buithuhang/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
         </a>
-        <a class="btn btn-primary" href="/CV_BuiThuHang.pdf" download="CV_ Bùi Thu Hằng_Business Data Analyst.pdf">
+        <a class="btn btn-primary" href="/CV_BuiThuHang.pdf?dl=1" download="CV_ Bùi Thu Hằng_Business Data Analyst.pdf">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download CV
         </a>
@@ -270,6 +270,13 @@
   </main>
 
   <script>
+    (function () {
+      var iframe = document.querySelector('.viewer iframe');
+      if (iframe && window.matchMedia('(max-width: 720px)').matches) {
+        iframe.src = '/CV_BuiThuHang.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
+      }
+    })();
+
     (function () {
       var EMAIL = 'buihang.work@gmail.com';
       var mailBtn = document.getElementById('mailBtn');
