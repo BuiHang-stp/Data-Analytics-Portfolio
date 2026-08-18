@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, MapPin, Sparkles, Copy, Check, FileText } from 'lucide-react';
+import { ArrowRight, MapPin, Sparkles, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SiGithub as Github } from 'react-icons/si';
 import { FaLinkedin as Linkedin } from 'react-icons/fa';
 import profilePic from '../assets/avatar/github-avatar.jpg';
+import EmailPopover from './EmailPopover';
 
 export default function AboutMe() {
   const [titleIndex, setTitleIndex] = useState(0);
-  const [copied, setCopied] = useState(false);
   const titles = [
     "Fresher Data Analyst"
   ];
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("buihang.work@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const [displayedText, setDisplayedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -146,16 +140,7 @@ export default function AboutMe() {
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-              <motion.button
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={handleCopyEmail}
-                className="btn-secondary"
-                style={{ padding: '0.75rem 1.25rem', borderRadius: '12px', gap: '0.5rem', cursor: 'pointer', border: '1px solid var(--outline-low)' }}
-              >
-                {copied ? <Check size={18} color="var(--primary)" /> : <Copy size={18} />}
-                <span>{copied ? 'Copied Email!' : 'Copy Email'}</span>
-              </motion.button>
+              <EmailPopover variant="button" align="left" />
 
               <motion.a
                 whileHover={{ scale: 1.04, y: -2 }}
